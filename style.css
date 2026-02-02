@@ -2,17 +2,25 @@
 
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: rgb(238, 236, 236);
+  color: #333;
+}
+
+/* Shift page content right so the sidebar does not overlap */
+body {
+  /* use right padding to make room for a right-side sidebar */
+  padding-right: 180px; /* 180px sidebar + 20px gap */
+  box-sizing: border-box;
 }
 
 /* Hero Section */
 .hero {
-  background-color: #003366;
-  color: white;
-  padding: 50px 20px;
+  background: linear-gradient(135deg, #003366 0%, #004d80 100%);
+  color: white; 
+  padding: 24px 50px;
   text-align: center;
 }
 
@@ -21,42 +29,77 @@ body {
   height: 300px;
   border-radius: 100%;
   margin-bottom: 20px;
-  border: solid black 4px;
+  border: solid white 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero h1 {
-  margin: 20px 0;
-  font-size: 36px;
+  margin: 12px 0 8px 0;
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
 .hero-description {
   font-size: 18px;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.95;
 }
 
 /* Section Styles */
 section {
-  padding: 20px 20px;
+  padding: 12px 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 section h2 {
   color: #003366;
-  font-size: 28px;
+  font-size: 32px;
+  font-weight: 600;
   border-bottom: 3px solid #003366;
   padding-bottom: 10px;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
 }
 
 /* About Section */
 .about {
   background-color: white;
+  margin-top: 0;
 }
 
 .about p {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.8;
+}
+
+/* UIC Convocation Section */
+/* This section displays the Convocation 2025 image with text */
+.convocation {
+  background-color: white;
+}
+
+/* Style the convocation image */
+.convocation-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border: black 4px solid;
+  border-radius: 100%;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.2);
+}
+
+/* Style the text below the convocation image */
+.convocation p {
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: center;
+  color: #666;
 }
 
 /* Skills Section */
@@ -67,14 +110,24 @@ section h2 {
 .skills ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .skills li {
   background-color: #003366;
   color: white;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border-radius: 5px;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skills li:hover {
+  background-color: #004d80;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
 }
 
 /* Awards Section */
@@ -88,10 +141,25 @@ section h2 {
 }
 
 .awards li {
-  padding: 12px 20px;
+  padding: 14px 16px;
   margin: 8px 0;
-  border-left: 4px solid #003366;
-  background-color: #f9f9f9;
+  border-left: 5px solid #003366;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.awards li:hover {
+  background-color: #f0f4f8;
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.15);
+}
+
+.awards p {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+  color: #666;
+  font-weight: normal;
 }
 
 /* Interests Section */
@@ -105,11 +173,26 @@ section h2 {
 }
 
 .interests li {
-  padding: 12px 20px;
+  padding: 14px 16px;
   margin: 8px 0;
   background-color: #003366;
   color: white;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.interests li:hover {
+  background-color: #004d80;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+}
+
+.interests p {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+  font-weight: normal;
 }
 
 /* Footer */
@@ -117,20 +200,87 @@ section h2 {
   background-color: #003366;
   color: white;
   text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
+  padding: 24px 40px;
 }
 
 .footer h2 {
   color: white;
   border-bottom: 3px solid white;
+    padding-bottom: 10px;
 }
 
 .footer ul {
   list-style-type: none;
   padding: 0;
+  margin: 20px 0 0 0;
 }
 
-.footer li {
-  padding: 8px 0;
+.footer a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 8px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: underline;
+}
+
+.footer img.link-icon {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  margin-left: 0px;
+  border-radius: 90%;
+}
+
+/* Sidebar navigation (simple fixed right nav) */
+.sidebar {
+  position: fixed;
+  right: 0;                  /* moved from left to right */
+  top: 0;
+  height: 100vh;             /* full height */
+  width: 180px;              /* sidebar width */
+  background-color: #ffffff; /* white background */
+  border-left: 1px solid #ddd; /* border on left side now */
+  padding: 20px 12px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+/* Keep links stacked and readable */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Link appearance */
+.sidebar a {
+  color: #003366;             /* primary dark blue */
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* Hover effect for clarity */
+.sidebar a:hover {
+  background-color: rgba(0, 77, 128, 0.08);
+}
+
+/* Keep sidebar hidden on small screens (mobile-friendly) */
+@media (max-width: 700px) {
+  .sidebar {
+    display: none;
+  }
+  body {
+    padding-right: 0; /* remove right padding on small screens */
+  }
 }
