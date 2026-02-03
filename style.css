@@ -18,9 +18,10 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #003366 0%, #004d80 100%);
+  /* Add a subtle gradient from dark blue to a lighter blue */
+  background: linear-gradient(180deg, #003366 0%, #0052a3 100%);
   color: white; 
-  padding: 24px 50px;
+  padding: 24px 100px;
   text-align: center;
 }
 
@@ -30,7 +31,7 @@ body {
   border-radius: 100%;
   margin-bottom: 20px;
   border: solid white 4px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);;
 }
 
 .hero h1 {
@@ -195,12 +196,55 @@ section h2 {
   font-weight: normal;
 }
 
+/* Projects Section */
+/* This section displays a list of your projects */
+.projects {
+  background-color: white;
+}
+
+/* Style each project item */
+.projects ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.projects li {
+  padding: 16px 16px;
+  margin: 12px 0;
+  border-left: 5px solid #003366;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Add hover effect for interactivity */
+.projects li:hover {
+  background-color: #f0f4f8;
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.15);
+}
+
+/* Style project titles */
+.projects h3 {
+  color: #003366;
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Style project descriptions */
+.projects p {
+  font-size: 14px;
+  color: #666;
+  font-weight: normal;
+}
+
 /* Footer */
 .footer {
-  background-color: #003366;
-  color: white;
-  text-align: center;
-  padding: 24px 40px;
+    background: linear-gradient(180deg, #003366 0%, #0052a3 100%);
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 24px 40px;
 }
 
 .footer h2 {
